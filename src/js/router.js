@@ -37,7 +37,7 @@ const router = (event) => {
 const urlLocationHandler = async () => {
   const location = window.location.pathname;
   if (location.length == 0) {
-    location = "/";
+    location = "./";
   }
 
   const route = routes[location] || routes[404];
