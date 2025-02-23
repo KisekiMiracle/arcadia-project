@@ -11,17 +11,17 @@ document.addEventListener("click", (e) => {
 
 const routes = {
   404: {
-    template: "/pages/404.html",
+    template: "./pages/404.html",
     title: `404 | ${urlPageTitle}`,
     description: "Page not found.",
   },
   "/": {
-    template: "/pages/home.html",
+    template: "./pages/home.html",
     title: `Home | ${urlPageTitle}`,
     description: "The Home page.",
   },
   "/characters": {
-    template: "/pages/characters.html",
+    template: "./pages/characters.html",
     title: `Characters | ${urlPageTitle}`,
     description: "The Characters page.",
   },
