@@ -9,6 +9,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(__dirname, "index.html"),
+        home: resolve(__dirname, "pages/home.html"),
+        characters: resolve(__dirname, "pages/characters.html"),
       },
     },
   },
