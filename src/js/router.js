@@ -25,6 +25,11 @@ const routes = {
     title: `Characters | ${urlPageTitle}`,
     description: "The Characters page.",
   },
+  "/report": {
+    template: "/pages/report.html",
+    title: `Report | ${urlPageTitle}`,
+    description: "Report page.",
+  },
 };
 
 const router = (event) => {

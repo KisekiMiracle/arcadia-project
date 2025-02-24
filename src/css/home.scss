@@ -1,0 +1,117 @@
+@mixin btn-theme-regular-black {
+  width: fit-content;
+  text-decoration: none;
+  color: var(--clr-black);
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+
+  border: 2px solid var(--clr-black);
+  border-radius: var(--border-radius-small);
+  padding: 10px 20px;
+
+  transition: color var(--transition-time-fast), background-color var(--transition-time-fast);
+
+  i {
+    font-size: 48px;
+  }
+
+  &:hover {
+    color: white;
+    background-color: var(--clr-black);
+    cursor: pointer;
+  }
+}
+
+.c-btn-steam {
+  @include btn-theme-regular-black();
+}
+
+.c-hr-small {
+  width: 10%;
+  height: 6px;
+  border: none;
+  background-color: red;
+}
+
+.c-article-card {
+  $root: &;
+
+  height: 250px;
+  min-width: min(100%, 360px);
+  max-width: 400px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  border: 1px solid color-mix(in srgb, var(--clr-black) 30%, transparent 100%);
+  border-radius: var(--border-radius-small);
+
+  position: relative;
+  color: white;
+
+  overflow: hidden;
+
+  > * {
+    padding-inline: 1rem;
+    z-index: 2;
+  }
+
+  p {
+    font-size: 0.833rem;
+  }
+
+  h3 {
+    font-weight: 800;
+    margin-bottom: 0.833rem;
+    text-wrap: wrap;
+  }
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -9;
+  }
+
+  &:after {
+    $color-mix: color-mix(in srgb, var(--clr-black) 100%, transparent 50%);
+    transition: height var(--transition-time-normal);
+
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35%;
+    background-color: $color-mix;
+    z-index: 1;
+
+    -webkit-box-shadow: 0px -14px 10px 10px $color-mix;
+    -moz-box-shadow: 0px -14px 10px 10px $color-mix;
+    box-shadow: 0px -14px 10px 10px $color-mix;
+  }
+
+  &:hover {
+    justify-content: center;
+    cursor: pointer;
+
+    #{$root}-summary {
+      height: auto;
+      opacity: 100;
+    }
+
+    &:after {
+      height: 100%;
+    }
+  }
+
+  &-summary {
+    height: 0;
+    opacity: 0;
+
+    transition: height var(--transition-time-normal), opacity var(--transition-time-normal);
+  }
+}

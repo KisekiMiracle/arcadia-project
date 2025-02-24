@@ -1,5 +1,10 @@
 :root {
   --clr-black: #212121;
+
+  --transition-time-fast: 0.15s;
+  --transition-time-normal: 0.3s;
+
+  --border-radius-small: 4px;
 }
 
 body {
@@ -15,15 +20,31 @@ h1 {
   font-size: 2.986rem;
 }
 
+#app {
+  margin-bottom: 80px;
+}
+
 #page-header {
   background-color: var(--clr-black);
 
   nav {
     display: flex;
-    padding: 20px max(4vw, 40px);
+    padding: 16px max(4vw, 40px);
     color: white;
     font-size: 1.2rem;
-    gap: 1rem;
+    gap: 4rem;
+    flex-wrap: wrap;
+
+    @media only screen and (max-width: 600px) {
+      gap: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      display: inline-flex;
+      gap: 2rem;
+      padding: unset;
+    }
 
     a {
       color: white;
@@ -31,13 +52,55 @@ h1 {
     }
 
     .c-header-item-active {
+      padding-bottom: 4px;
       border-bottom: 2px solid red;
     }
   }
 }
 
+@mixin section-centralized {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.u-centralize-section {
+  @include section-centralized();
+}
+
 .c-container {
   width: min(80%, 1600px);
   margin-inline: auto;
-  outline: 1px solid red;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.u-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.u-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.u-center-y {
+  align-items: center;
+}
+
+.u-center-x {
+  justify-content: center;
+}
+
+.u-no-wrap {
+  flex-grow: unset;
+}
+
+.u-inline-scroll {
+  flex-shrink: 0;
+  overflow-x: auto;
 }
