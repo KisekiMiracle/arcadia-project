@@ -73,6 +73,26 @@
   left: 0;
   z-index: -9;
 }
+.c-article-card-summary {
+  height: 0;
+  opacity: 0;
+  max-height: 127px;
+  overflow-y: hidden;
+  -webkit-transform: translateY(2rem);
+          transform: translateY(2rem);
+  -webkit-transition: height var(--transition-time-normal), opacity var(--transition-time-normal), -webkit-transform var(--transition-time-normal);
+  transition: height var(--transition-time-normal), opacity var(--transition-time-normal), -webkit-transform var(--transition-time-normal);
+  transition: height var(--transition-time-normal), opacity var(--transition-time-normal), transform var(--transition-time-normal);
+  transition: height var(--transition-time-normal), opacity var(--transition-time-normal), transform var(--transition-time-normal), -webkit-transform var(--transition-time-normal);
+}
+.c-article-card-summary p {
+  width: inherit;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  overflow: hidden;
+}
 .c-article-card:after {
   -webkit-transition: height var(--transition-time-normal);
   transition: height var(--transition-time-normal);
@@ -81,10 +101,9 @@
   bottom: 0;
   width: 100%;
   height: 35%;
-  background-color: color-mix(in srgb, var(--clr-black) 100%, transparent 50%);
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(var(--clr-black)));
+  background: linear-gradient(transparent, var(--clr-black));
   z-index: 1;
-  -webkit-box-shadow: 0px -14px 10px 10px color-mix(in srgb, var(--clr-black) 100%, transparent 50%);
-  box-shadow: 0px -14px 10px 10px color-mix(in srgb, var(--clr-black) 100%, transparent 50%);
 }
 .c-article-card:hover {
   -webkit-box-pack: center;
@@ -93,15 +112,11 @@
   cursor: pointer;
 }
 .c-article-card:hover .c-article-card-summary {
-  height: auto;
+  height: 127px;
   opacity: 100;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 .c-article-card:hover:after {
   height: 100%;
-}
-.c-article-card-summary {
-  height: 0;
-  opacity: 0;
-  -webkit-transition: height var(--transition-time-normal), opacity var(--transition-time-normal);
-  transition: height var(--transition-time-normal), opacity var(--transition-time-normal);
 }
