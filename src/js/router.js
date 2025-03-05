@@ -43,6 +43,7 @@ const handleHeaderActivePage = (location) => {
   switch (location) {
     case "/":
       document.querySelectorAll("nav a")[0].classList.add("c-header-item-active");
+      console.log("Homepage was loaded!");
       break;
     case "/characters":
       document.querySelectorAll("nav a")[1].classList.add("c-header-item-active");
