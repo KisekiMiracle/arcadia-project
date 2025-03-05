@@ -34,6 +34,15 @@
   background-color: red;
 }
 
+.c-devlog-container {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-grow: unset;
+  flex-shrink: 0;
+  overflow-x: auto;
+}
+
 .c-article-card {
   $root: &;
 

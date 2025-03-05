@@ -1,3 +1,5 @@
+import * as utils_homePage from "./utils_home.js";
+
 const urlPageTitle = "Arcadia Project";
 
 document.addEventListener("click", (e) => {
@@ -39,11 +41,11 @@ const router = (event) => {
   urlLocationHandler();
 };
 
-const handleHeaderActivePage = (location) => {
+const handleHeaderActivePage = async (location) => {
   switch (location) {
     case "/":
       document.querySelectorAll("nav a")[0].classList.add("c-header-item-active");
-      console.log("Homepage was loaded!");
+      await utils_homePage.loadDevlogCard();
       break;
     case "/characters":
       document.querySelectorAll("nav a")[1].classList.add("c-header-item-active");

@@ -33,6 +33,23 @@
   background-color: red;
 }
 
+.c-devlog-container {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1rem;
+  -webkit-box-flex: unset;
+      -ms-flex-positive: unset;
+          flex-grow: unset;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  overflow-x: auto;
+}
+
 .c-article-card {
   height: 250px;
   min-width: min(100%, 360px);
