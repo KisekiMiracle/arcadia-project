@@ -55,7 +55,7 @@ h1 {
 }
 #page-header nav .c-header-item-active {
   padding-bottom: 4px;
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid hsl(344, 100%, 50%);
 }
 
 .u-centralize-section {

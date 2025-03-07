@@ -28,6 +28,7 @@ export default defineConfig({
         home: resolve(__dirname, "pages/home.html"),
         characters: resolve(__dirname, "pages/characters.html"),
         report: resolve(__dirname, "pages/report.html"),
+        component_articleCard: resolve(__dirname, "src/assets/components/article_card.html"),
       },
     },
   },

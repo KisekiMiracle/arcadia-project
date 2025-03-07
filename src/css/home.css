@@ -30,7 +30,7 @@
   width: 10%;
   height: 6px;
   border: none;
-  background-color: red;
+  background-color: hsl(344, 100%, 50%);
 }
 
 .c-devlog-container {
@@ -76,11 +76,13 @@
 }
 .c-article-card p {
   font-size: 0.833rem;
+  margin: unset;
 }
 .c-article-card h3 {
   font-weight: 800;
   margin-bottom: 0.833rem;
   text-wrap: wrap;
+  margin-top: unset;
 }
 .c-article-card img {
   position: absolute;
@@ -89,6 +91,9 @@
   top: 0;
   left: 0;
   z-index: -9;
+  padding-inline: 0;
+  -webkit-filter: grayscale(35%) blur(2px) contrast(120%) opacity(85%);
+          filter: grayscale(35%) blur(2px) contrast(120%) opacity(85%);
 }
 .c-article-card-summary {
   height: 0;
@@ -111,16 +116,30 @@
   overflow: hidden;
 }
 .c-article-card:after {
-  -webkit-transition: height var(--transition-time-normal);
-  transition: height var(--transition-time-normal);
   content: "";
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 35%;
   background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(var(--clr-black)));
-  background: linear-gradient(transparent, var(--clr-black));
+  background: linear-gradient(to bottom, transparent, var(--clr-black));
   z-index: 1;
+  -webkit-transition: height var(--transition-time-normal);
+  transition: height var(--transition-time-normal);
+}
+.c-article-card:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(hsl(344, 100%, 50%)), to(hsl(31, 100%, 40%)));
+  background-image: linear-gradient(to bottom, hsl(344, 100%, 50%), hsl(31, 100%, 40%));
+  z-index: -1;
+  -webkit-transition: opacity var(--transition-time-normal) linear;
+  transition: opacity var(--transition-time-normal) linear;
+  opacity: 0;
 }
 .c-article-card:hover {
   -webkit-box-pack: center;
@@ -136,4 +155,7 @@
 }
 .c-article-card:hover:after {
   height: 100%;
+}
+.c-article-card:hover:before {
+  opacity: 1;
 }

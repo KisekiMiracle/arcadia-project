@@ -1,4 +1,5 @@
-import * as utils_homePage from "./utils_home.js";
+import * as utils_articleCard from "./article_card.js";
+import * as utils_page_home from "./utils_home.js";
 
 const urlPageTitle = "Arcadia Project";
 
@@ -45,7 +46,7 @@ const handleHeaderActivePage = async (location) => {
   switch (location) {
     case "/":
       document.querySelectorAll("nav a")[0].classList.add("c-header-item-active");
-      await utils_homePage.loadDevlogCard();
+      utils_page_home.retrieveData();
       break;
     case "/characters":
       document.querySelectorAll("nav a")[1].classList.add("c-header-item-active");
@@ -62,9 +63,15 @@ const urlLocationHandler = async () => {
   const route = routes[location] || routes[404];
   const html = await fetch(route.template).then((res) => res.text());
 
+  // Page's metadata
   document.querySelector("#app").innerHTML = html;
   document.title = route.title;
   document.querySelector('meta[name="description"]').setAttribute("content", route.description);
+
+  // Declare and embed Web Components
+  await utils_articleCard.loadDevlogCard(); // ? Web Component: article_card
+
+  // Setup active page
   handleHeaderActivePage(location);
 };
 

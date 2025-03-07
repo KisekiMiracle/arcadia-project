@@ -31,7 +31,7 @@
   width: 10%;
   height: 6px;
   border: none;
-  background-color: red;
+  background-color: hsl(344, 100%, 50%);
 }
 
 .c-devlog-container {
@@ -69,12 +69,14 @@
 
   p {
     font-size: 0.833rem;
+    margin: unset;
   }
 
   h3 {
     font-weight: 800;
     margin-bottom: 0.833rem;
     text-wrap: wrap;
+    margin-top: unset;
   }
 
   img {
@@ -84,6 +86,8 @@
     top: 0;
     left: 0;
     z-index: -9;
+    padding-inline: 0;
+    filter: grayscale(35%) blur(2px) contrast(120%) opacity(85%);
   }
 
   &-summary {
@@ -107,16 +111,27 @@
   }
 
   &:after {
-    $color-mix: color-mix(in srgb, var(--clr-black) 100%, transparent 50%);
-    transition: height var(--transition-time-normal);
-
     content: "";
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 35%;
-    background: linear-gradient(transparent, var(--clr-black));
+    background: linear-gradient(to bottom, transparent, var(--clr-black));
     z-index: 1;
+    transition: height var(--transition-time-normal);
+  }
+
+  &:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, hsl(344, 100%, 50%), hsl(31, 100%, 40%));
+    z-index: -1;
+    transition: opacity var(--transition-time-normal) linear;
+    opacity: 0;
   }
 
   &:hover {
@@ -131,6 +146,10 @@
 
     &:after {
       height: 100%;
+    }
+
+    &:before {
+      opacity: 1;
     }
   }
 }
