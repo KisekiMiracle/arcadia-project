@@ -1,0 +1,101 @@
+.c-index {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 2rem;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    margin-top: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    font-size: 1rem;
+  }
+
+  &-title {
+    font-size: 1.44rem;
+    font-weight: 700;
+  }
+}
+
+.c-devlog {
+  $root: &;
+
+  &-section {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 260px 1fr 260px;
+    align-items: start;
+  }
+
+  &-content {
+    max-width: 900px;
+    padding-inline: 3rem;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0.7rem;
+  }
+
+  &-header-image {
+    border-radius: 12px;
+  }
+
+  &-title {
+    margin-top: 20px;
+  }
+
+  &-subtitle {
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 1;
+    font-style: italic;
+    line-height: 1.2;
+  }
+
+  &-info {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &-tag {
+    background-color: color-mix(in srgb, transparent 20%, var(--clr-purple-100) 100%);
+    color: var(--clr-purple);
+    padding: 2px 20px;
+    border-radius: 6px;
+
+    display: inline-flex;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    align-items: center;
+
+    &:before {
+      content: "\233E"/ "";
+      font-weight: 700;
+    }
+  }
+}
+
+.c-content-other {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 2rem;
+}
+
+// DevLog Template Styles
+#blog-content {
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

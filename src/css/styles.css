@@ -1,8 +1,35 @@
 :root {
   --clr-black: #212121;
+  --clr-folly: #eb003f;
+  --clr-folly-100: #ffebf1;
+  --clr-folly-200: #ffd8e2;
+  --clr-folly-300: #ffc4d4;
+  --clr-folly-400: #ffb0c5;
+  --clr-folly-500: #ff9db7;
+  --clr-folly-600: #ff89a8;
+  --clr-folly-700: #ff759a;
+  --clr-folly-800: #ff759a;
+  --clr-folly-900: #ff628c;
+  --clr-folly-1000: #ff4e7d;
+  --clr-purple: #3b00db;
+  --clr-purple-100: #f0eaff;
+  --clr-purple-200: #e1d5ff;
+  --clr-purple-300: #d1c1ff;
+  --clr-purple-400: #c2acff;
+  --clr-purple-500: #b397ff;
+  --clr-purple-600: #a482ff;
+  --clr-purple-700: #946eff;
+  --clr-purple-800: #8559ff;
+  --clr-purple-900: #7644ff;
+  --clr-purple-1000: #672fff;
   --transition-time-fast: 0.15s;
   --transition-time-normal: 0.3s;
   --border-radius-small: 4px;
+}
+
+*,
+html {
+  scroll-behavior: smooth !important;
 }
 
 body {
@@ -13,9 +40,40 @@ body {
   line-height: 1.6;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
   color: var(--clr-black);
+}
+
+h1 {
   font-size: 2.986rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.488rem;
+}
+
+h3 {
+  font-size: 2.074rem;
+}
+
+h4 {
+  font-size: 1.728rem;
+}
+
+h5 {
+  font-size: 1.44rem;
+}
+
+h6 {
+  font-size: 1.2rem;
 }
 
 #app {
@@ -49,6 +107,9 @@ h1 {
   gap: 2rem;
   padding: unset;
 }
+#page-header nav p {
+  color: white;
+}
 #page-header nav a {
   color: white;
   text-decoration: none;
@@ -75,12 +136,11 @@ h1 {
 }
 
 .c-container {
-  width: min(80%, 1600px);
+  width: min(80%, 1368px);
   margin-inline: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow-x: hidden;
 }
 
 .u-col {
@@ -127,4 +187,16 @@ h1 {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   overflow-x: auto;
+}
+
+.c-link-regular {
+  text-decoration: none;
+  color: var(--clr-purple);
+  border-bottom: 1px solid var(--clr-purple);
+  -webkit-transition: border-bottom-color var(--transition-time-fast), color var(--transition-time-fast);
+  transition: border-bottom-color var(--transition-time-fast), color var(--transition-time-fast);
+}
+.c-link-regular:hover, .c-link-regular:focus {
+  color: color-mix(in srgb, transparent 20%, var(--clr-purple) 75%);
+  border-bottom-color: color-mix(in srgb, transparent 20%, var(--clr-purple) 75%);
 }
